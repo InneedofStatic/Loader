@@ -38,8 +38,8 @@ end;disableDuplicateUI()
 local KeyMain = KeyUI.Main
 KeyMain.Title.Text = "Shadow Hub"
 KeyMain.Subtitle.Text = "Key System"
-KeyMain.NoteMessage.Text = "Lootlabs: https://ads.luarmor.net/get_key?for=FIAS__FREEVERSION-OWulwoDvNPea"
 KeyMain.NoteMessage.Selectable = true
+KeyMain.NoteMessage.Text = "Lootlabs: https://ads.luarmor.net/get_key?for=FIAS__FREEVERSION-OWulwoDvNPea"
 
 KeyMain.Size = UDim2.new(0, 467, 0, 175)
 KeyMain.BackgroundTransparency = 1
@@ -133,7 +133,7 @@ KeyMain.Input.InputBox.FocusLost:Connect(function()
 		task.wait(0.51)
 		KeyMain.Visible = false
 
-        script_key = script_key or textLabel1.Text
+        script_key = script_key or KeyMain.Input.InputBox.Text
         api.load_script()
 
 	elseif status.code == "KEY_INCORRECT" then
