@@ -93,9 +93,8 @@ KeyMain.Input.InputBox.FocusLost:Connect(function()
 		return
 	end
 
-	local KeyFound, FoundKey = false, ""
-
 	local status = api.check_key(KeyMain.Input.InputBox.Text)
+	print(status)
 
 	if status.code == "KEY_VALID" then
 		TweenService:Create(KeyMain, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), { BackgroundTransparency = 1 })
@@ -133,8 +132,8 @@ KeyMain.Input.InputBox.FocusLost:Connect(function()
 		task.wait(0.51)
 		KeyMain.Visible = false
 
-        script_key = script_key or KeyMain.Input.InputBox.Text
-        api.load_script()
+	        script_key = KeyMain.Input.InputBox.Text
+	        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/d4779cc1b245430d4829ed0bb3b1a007.lua"))() 
 
 	elseif status.code == "KEY_INCORRECT" then
 		KeyMain.Input.InputBox.Text = ""
