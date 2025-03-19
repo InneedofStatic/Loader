@@ -33,13 +33,18 @@ local function disableDuplicateUI()
 			Interface.Name = "KeyUI-Old"
 		end
 	end
-end;disableDuplicateUI()
+end
+disableDuplicateUI()
 
 local KeyMain = KeyUI.Main
 KeyMain.Title.Text = "Shadow Hub"
 KeyMain.Subtitle.Text = "Key System"
 KeyMain.NoteMessage.Selectable = true
-KeyMain.NoteMessage.Text = "Lootlabs: https://ads.luarmor.net/get_key?for=FIAS__FREEVERSION-OWulwoDvNPea"
+KeyMain.NoteMessage.Text = "Join our Discord server to get the key! discord.gg/ph5CMupftS"
+
+if setclipboard and setclipboard("discord.gg/ph5CMupftS") then
+	KeyMain.NoteMessage.Text = "Join our Discord server to get the key! discord.gg/ph5CMupftS\n\n"
+end
 
 KeyMain.Size = UDim2.new(0, 467, 0, 175)
 KeyMain.BackgroundTransparency = 1
@@ -132,9 +137,8 @@ KeyMain.Input.InputBox.FocusLost:Connect(function()
 		task.wait(0.51)
 		KeyMain.Visible = false
 
-	        script_key = KeyMain.Input.InputBox.Text
-	        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/d4779cc1b245430d4829ed0bb3b1a007.lua"))() 
-
+		script_key = KeyMain.Input.InputBox.Text
+		loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/d4779cc1b245430d4829ed0bb3b1a007.lua"))()
 	elseif status.code == "KEY_INCORRECT" then
 		KeyMain.Input.InputBox.Text = ""
 		TweenService
