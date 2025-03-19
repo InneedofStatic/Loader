@@ -40,7 +40,7 @@ local KeyMain = KeyUI.Main
 KeyMain.Title.Text = "Shadow Hub"
 KeyMain.Subtitle.Text = "Key System"
 KeyMain.NoteMessage.Selectable = true
-KeyMain.NoteMessage.Text = "Join our Discord server to get the key! discord.gg/ph5CMupftS"
+KeyMain.NoteMessage.Text = "Join our Discord server to get the key! discord.gg/ph5CMupftS (Copied)"
 
 if setclipboard then
 	setclipboard("discord.gg/ph5CMupftS") then
