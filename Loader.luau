@@ -43,7 +43,7 @@ KeyMain.NoteMessage.Selectable = true
 KeyMain.NoteMessage.Text = "Join our Discord server to get the key! discord.gg/ph5CMupftS"
 
 if setclipboard and setclipboard("discord.gg/ph5CMupftS") then
-	KeyMain.NoteMessage.Text = "Join our Discord server to get the key! discord.gg/ph5CMupftS\n\n"
+	KeyMain.NoteMessage.Text = "Copied discord to clipboard! discord.gg/ph5CMupftS"
 end
 
 KeyMain.Size = UDim2.new(0, 467, 0, 175)
