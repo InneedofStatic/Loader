@@ -11,7 +11,7 @@ local TweenService = getService("TweenService")
 local Players = getService("Players")
 local CoreGui = getService("CoreGui")
 
-local KeyUI = game:GetObjects("rbxassetid://70575812181691")[1]
+local KeyUI = game:GetObjects("rbxassetid://11380036235")[1]
 KeyUI.Enabled = true
 
 if gethui then
@@ -33,13 +33,13 @@ local function disableDuplicateUI()
 			Interface.Name = "KeyUI-Old"
 		end
 	end
-end
-disableDuplicateUI()
+end;disableDuplicateUI()
 
 local KeyMain = KeyUI.Main
 KeyMain.Title.Text = "Shadow Hub"
 KeyMain.Subtitle.Text = "Key System"
-KeyMain.NoteMessage.Text = "Join our Discord server to get the key! discord.gg/ph5CMupftS"
+KeyMain.NoteMessage.Selectable = true
+KeyMain.NoteMessage.Text = "Lootlabs: https://ads.luarmor.net/get_key?for=FIAS__FREEVERSION-OWulwoDvNPea"
 
 KeyMain.Size = UDim2.new(0, 467, 0, 175)
 KeyMain.BackgroundTransparency = 1
@@ -93,9 +93,8 @@ KeyMain.Input.InputBox.FocusLost:Connect(function()
 		return
 	end
 
-	local KeyFound, FoundKey = false, ""
-
 	local status = api.check_key(KeyMain.Input.InputBox.Text)
+	print(status)
 
 	if status.code == "KEY_VALID" then
 		TweenService:Create(KeyMain, TweenInfo.new(0.6, Enum.EasingStyle.Exponential), { BackgroundTransparency = 1 })
@@ -133,8 +132,8 @@ KeyMain.Input.InputBox.FocusLost:Connect(function()
 		task.wait(0.51)
 		KeyMain.Visible = false
 
-        script_key = script_key or textLabel1.Text
-        api.load_script()
+	        script_key = KeyMain.Input.InputBox.Text
+	        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/d4779cc1b245430d4829ed0bb3b1a007.lua"))() 
 
 	elseif status.code == "KEY_INCORRECT" then
 		KeyMain.Input.InputBox.Text = ""
