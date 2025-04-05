@@ -43,7 +43,7 @@ KeyMain.NoteMessage.Selectable = true
 KeyMain.NoteMessage.Text = "Join our Discord server to get the key! discord.gg/ph5CMupftS (Copied)"
 
 if setclipboard then
-	setclipboard("discord.gg/ph5CMupftS") then
+	setclipboard("discord.gg/ph5CMupftS") 
 	KeyMain.NoteMessage.Text = "Copied discord to clipboard! discord.gg/ph5CMupftS"
 end
 
